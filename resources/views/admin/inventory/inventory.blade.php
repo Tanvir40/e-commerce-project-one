@@ -120,6 +120,77 @@
         </div>
         @endcan
     </div>
+
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Meta Tags Keywords List</h2>
+                    @if (session('tags_success'))
+                        <div class="alert alert-success"><strong>{{session('tags_success')}}</strong></div>
+                    @endif
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive" id="no-more-tables">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>SL</th>
+                            <th>Meta Keyword Name</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($tags as $key=>$tag)
+                        <tr>
+                          <td data-title="SL">{{$key+1}}</td>
+                          <td data-title="Quantity">{{$tag->tag_name}}</td>
+                          <td data-title="Action">
+                              @can('del_inventory')
+                            <button type="button" name="{{route('tags.delete', $tag->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button>
+                            @endcan
+                          </td>
+                      </tr>
+                        @endforeach
+                    </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        @can('add_inventory')
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Add Meta Keyword</h2>
+                    <span class="text-success">Meta Keywords For SEO</span>
+                </div>
+                <div class="card-body">
+                    @error('tag_name')
+                    <strong class="text-danger">{{$message}}</strong>
+                    @enderror
+                    <form action="{{url('/insert/tags')}}" method="post">
+                        @csrf
+                        <div class="mt-3">
+                            <input type="text" readonly class="form-control" value="{{$product_info->product_name}}">
+                        </div>
+
+                        <div class="mt-3">
+                            <input type="text" name="tag_name" class="form-control">
+                        </div>
+
+                        <div class="mt-3">
+                            <button class="btn btn-success shadow btn-xs"> Add Keyword</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        @endcan
+    </div>
+
     @endcan
 @endsection
 

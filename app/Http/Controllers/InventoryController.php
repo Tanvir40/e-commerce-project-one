@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Color;
 use App\Models\Product;
 use App\Models\Inventory;
+use App\Models\MetaTag;
 use App\Models\Size;
 use Carbon\Carbon;
 
@@ -51,12 +52,14 @@ class InventoryController extends Controller
         $product_info = Product::find($product_id);
         $colors = Color::all();
         $sizes = Size::all();
+        $tags = MetaTag::all();
         $inventories = Inventory::where('product_id', $product_id)->get();
         return view('admin.inventory.inventory', [
             'product_info'=> $product_info,
             'colors'=> $colors,
             'sizes'=> $sizes,
             'inventories'=> $inventories,
+            'tags'=> $tags,
         ]);
     }
 
@@ -126,5 +129,23 @@ class InventoryController extends Controller
         return redirect()->route('product.list')->with('success','Inventory Updated Successfully');
     }
 
+    //insert meta tags to database
+    function tags(Request $request){
+        $request->validate([
+            'tag_name'=>'required|unique:meta_tags',
+        ]);
+        MetaTag::insert([
+            'tag_name'=>$request->tag_name,
+            'created_at'=>Carbon::now(),
+        ]);
+        return back()->with('tags_success', 'Tags Added Successfully!');
+    }
+
+    //meta tags delete
+    function tags_delete($tags){
+        MetaTag::find($tags)->delete();
+        return back()->with('delete', 'Keyword Deleted Successfully!');
+
+    }
 
 }

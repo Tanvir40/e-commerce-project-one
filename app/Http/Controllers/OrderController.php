@@ -100,7 +100,7 @@ class OrderController extends Controller
 
         //return Datatables::of(BillingDetails::query())->make(true);
 
-        $data = BillingDetails::get();
+        $data = BillingDetails::orderBy('created_at' , 'ASC')->get();
 
         if ($request->ajax()) {
             return Datatables::of($data)
@@ -120,7 +120,7 @@ class OrderController extends Controller
     
     //pending_orders
     function pending_orders(Request $request){
-        $orders = BillingDetails::where('status' , 'pending')->get();
+        $orders = BillingDetails::where('status' , 'pending')->orderBy('created_at' , 'DESC')->get();
         return view('admin.orders.pen_ord', [
             'orders'=>$orders,
         ]);
@@ -128,21 +128,21 @@ class OrderController extends Controller
 
     //processing_orders
     function processing_orders(Request $request){
-        $orders = BillingDetails::where('status' , 'processing')->get();
+        $orders = BillingDetails::where('status' , 'processing')->orderBy('created_at' , 'DESC')->get();
         return view('admin.orders.pro_ord', [
             'orders'=>$orders,
         ]);
     }
     //delivered_orders
     function delivered_orders(Request $request){
-        $orders = BillingDetails::where('status' , 'delivered')->get();
+        $orders = BillingDetails::where('status' , 'delivered')->orderBy('created_at' , 'DESC')->get();
         return view('admin.orders.del_ord', [
             'orders'=>$orders,
         ]);
     }
     //cencel_orders
     function cencel_orders(Request $request){
-        $orders = BillingDetails::where('status' , 'cencel')->get();
+        $orders = BillingDetails::where('status' , 'cencel')->orderBy('created_at' , 'DESC')->get();
         return view('admin.orders.cen_ord', [
             'orders'=>$orders,
         ]);

@@ -156,7 +156,7 @@ class CheckoutController extends Controller
         }
         elseif($request->payment_method == 5){
             $data = $request->all();
-            return view('paypal-payment' ,[
+            return view('myOrder' ,[
                 'data'=>$data,
             ]);
         }

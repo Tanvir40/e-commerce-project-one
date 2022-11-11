@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="keywords" content="Tanvir Hasan Tonmoy">
+    <meta name="keywords" content="@foreach(App\Models\MetaTag::get() as $tags){{$tags->tag_name}} @endforeach">
     <meta name="author" content="Tanvir Hasan Tonmoy">
     <meta name="publisher" content="Tanvir Hasan Tonmoy">
 
@@ -308,7 +308,16 @@
             </section>
             <!-- newsletter_section - end
             ================================================== -->
+            <div class="sidecall">
+                <a href="tel:+88 01821732936" target="_blank" class="phoneicon_sm"><i class="fa fa-phone"></i></a>
+                <a class="whtsapp_sm" href="https://wa.me/8801821732936" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            </div>
 
+            <div id="footfix">
+                <a href="tel:+88 01821732936" target="_blank" class="phoneicon_sm"><i class="fa fa-phone"></i></a>
+                <a class="whtsapp_sm" href="https://wa.me/8801821732936" target="_blank"><i class="fa fa-whatsapp"></i></a>
+            </div>
+                
         <!-- footer_section - start
         ================================================== -->
         <footer class="footer_section">

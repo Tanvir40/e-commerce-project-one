@@ -27,6 +27,7 @@ use App\Http\Controllers\RoleManagement;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -291,6 +292,10 @@ Route::get('/inventory/inventory/edit/{inventory_id}', [InventoryController::cla
 //inventory update
 Route::POST('/inventory/update/', [InventoryController::class,'inventory_update'])->name('inventory.update');
 
+//meta tags insert
+Route::post('/insert/tags', [InventoryController::class, 'tags']);
+//meta tags delete
+Route::get('/tags/delete/{tags}', [InventoryController::class, 'tags_delete'])->name('tags.delete');
 
 
 //customer login
@@ -417,3 +422,12 @@ Route::get('/all-orders', [OrderController::class, 'all_order'])->name('all.orde
 Route::post('reports/by-date',[HomeController::class,'reportByDate'])->name('search-by-date');
 Route::post('reports/by-month',[HomeController::class,'reportByMonth'])->name('search-by-month');
 Route::post('reports/by-year',[HomeController::class,'reportByYear'])->name('search-by-year');
+
+//paypal
+Route::get('/paypal',function(){
+    return view('myOrder');
+});
+// route for processing payment
+Route::post('/paypal', [PaymentController::class, 'payWithpaypal'])->name('paypal');
+// route for check status of the payment
+Route::get('/status', [PaymentController::class, 'getPaymentStatus'])->name('status');

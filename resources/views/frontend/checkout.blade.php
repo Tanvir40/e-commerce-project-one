@@ -153,23 +153,23 @@
                                        <li class="wc_payment_method payment_method_paypal">
                                           <input id="payment_method_stripe" type="radio" class="input-radio" name="payment_method" value="3" data-order_button_text="Proceed to SSL Commerz" />
                                           <!--grop add span for radio button style-->
-                                          <span class='grop-woo-radio-style'></span>
+                                          <span class='grop-woo-radio-style2'></span>
                                           <!--custom change-->
                                           <label for="payment_method_stripe">Stripe Payment</label>
                                        </li>
                                        <li class="wc_payment_method payment_method_paypal">
-                                          <input id="bkash_button" type="radio" class="input-radio" name="payment_method" value="4" data-order_button_text="Proceed to SSL Commerz" />
+                                          <input id="payment_method_bkash" type="radio" class="input-radio" name="payment_method" value="4" data-order_button_text="Proceed to SSL Commerz" />
                                           <!--grop add span for radio button style-->
                                           <span class='grop-woo-radio-style'></span>
                                           <!--custom change-->
-                                          <label for="payment_method_stripe">Bkash Payment</label>
+                                          <label for="payment_method_bkash">Bkash Payment</label>
                                        </li>
                                        <li class="wc_payment_method payment_method_paypal">
-                                          <input id="bkash_button" type="radio" class="input-radio" name="payment_method" value="5" data-order_button_text="Proceed to Paypal" />
+                                          <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="5" data-order_button_text="Proceed to Paypal" />
                                           <!--grop add span for radio button style-->
                                           <span class='grop-woo-radio-style'></span>
                                           <!--custom change-->
-                                          <label for="payment_method_stripe">Paypal Payment</label>
+                                          <label for="payment_method_paypal">Paypal Payment</label>
                                        </li>
                                    
                                     </ul>

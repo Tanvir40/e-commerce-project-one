@@ -9574,3 +9574,81 @@ hr {
 }
 /* media screen and (max-width: 425px) - end
 ================================================== */
+#footfix {
+	position:fixed;
+	bottom:0;
+	width:100%;
+	z-index:555;
+	font-size:16px;
+	display:none;
+}
+#footfix i {
+	font-size:22px;
+	vertical-align:middle;
+	margin-right:7px;
+}
+#footfix a {
+	color:#fff;
+	flex:1;
+	text-align:center;
+	padding:10px;
+}
+#footfix a:hover {
+	text-decoration: none;
+}
+.bggreen {
+	background:#4caf50;
+}
+.bgblue {
+	background:#007bff;
+}
+@media screen and (max-width:991px){
+#footfix {
+	display:flex;
+}
+}
+
+.sidecall {
+	position:fixed;
+	right:5px;
+	top:295px;
+	z-index: 9999;
+}
+
+.phoneicon_sm {
+	background:#007bff;
+	font-size:50px;
+	width:60px;
+	height:60px;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	position:absolute;
+	left:-60px;
+	top:55px;
+	line-height: 60px;
+}
+.phoneicon_sm:hover, .phoneicon_sm:focus {
+	background:#066cda;
+}
+.whtsapp_sm {
+	background:#1bd741;
+	font-size:50px;
+	width:60px;
+	height:60px;
+	text-align:center;
+	color:#fff;
+	cursor:pointer;
+	position:absolute;
+	left:-60px;
+	top:127px;
+	line-height: 60px;
+}
+.whtsapp_sm:hover, .whtsapp_sm:focus {
+	background:#349238;
+}
+@media screen and (max-width:991px) {
+.sidecall {
+	display:none;
+}
+}
