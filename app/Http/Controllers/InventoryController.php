@@ -52,7 +52,7 @@ class InventoryController extends Controller
         $product_info = Product::find($product_id);
         $colors = Color::all();
         $sizes = Size::all();
-        $tags = MetaTag::all();
+        $tags = MetaTag::where('product_id', $product_id)->get();
         $inventories = Inventory::where('product_id', $product_id)->get();
         return view('admin.inventory.inventory', [
             'product_info'=> $product_info,
@@ -64,6 +64,11 @@ class InventoryController extends Controller
     }
 
     function inventory_insert(Request $request){
+        $request->validate([
+            'color_id'=>'required',
+            'size_id'=>'required',
+            'quantity'=>'required',
+        ]);
 
         if(Inventory::where('product_id', $request->product_id)->where('color_id', $request->color_id)->where('size_id', $request->size_id)->exists()){
             Inventory::where('product_id', $request->product_id)->where('color_id', $request->color_id)->where('size_id', $request->size_id)->increment('quantity', $request->quantity);
@@ -135,6 +140,7 @@ class InventoryController extends Controller
             'tag_name'=>'required|unique:meta_tags',
         ]);
         MetaTag::insert([
+            'product_id'=>$request->product_id,
             'tag_name'=>$request->tag_name,
             'created_at'=>Carbon::now(),
         ]);

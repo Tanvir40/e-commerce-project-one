@@ -90,6 +90,9 @@
                         </div>
 
                         <div class="mt-3">
+                            @error('color_id')
+                                <strong class="text-danger">{{$message}}</strong>
+                            @enderror
                            <select name="color_id" class="form-control">
                                <option value="" class="form-control">-- select --</option>
                                 @foreach ($colors as $color)
@@ -99,6 +102,9 @@
                         </div>
 
                         <div class="mt-3">
+                            @error('size_id')
+                                <strong class="text-danger">{{$message}}</strong>
+                            @enderror
                             <select name="size_id" class="form-control">
                                 <option value="" class="form-control">-- select --</option>
                                 @foreach ($sizes as $size)
@@ -108,6 +114,9 @@
                         </div>
 
                         <div class="mt-3">
+                            @error('quantity')
+                                <strong class="text-danger">{{$message}}</strong>
+                            @enderror
                             <input type="number" class="form-control" value="" name="quantity" placeholder="Quantity">
                         </div>
 
@@ -175,6 +184,7 @@
                         @csrf
                         <div class="mt-3">
                             <input type="text" readonly class="form-control" value="{{$product_info->product_name}}">
+                            <input type="hidden" readonly class="form-control" value="{{$product_info->id}}" name="product_id">
                         </div>
 
                         <div class="mt-3">
