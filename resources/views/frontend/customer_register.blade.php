@@ -97,9 +97,9 @@
                                             <button type="submit" class="btn btn-primary">Sign In</button> <br>
                                         </div>
                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                            <a href="{{url('/github/redirect')}}" class="btn btn_primary">Github Sign In</a>
-                                            <a href="{{url('/google/redirect')}}" class="btn btn_primary">Google Sign In</a>
-                                            <a href="{{url('/facebook/redirect')}}" class="btn btn_primary">Facebook Sign In</a>
+                                            <a href="{{url('/github/redirect')}}"  class="btn btn_primary">Github Sign In</a>
+                                            <a href="{{url('/google/redirect')}}"  class="btn btn_primary">Google Sign In</a>
+                                            <a href="{{url('/facebook/redirect')}}"  class="btn btn_primary">Facebook Sign In</a>
                                         </div>
                                     </form>
                                 </div>
