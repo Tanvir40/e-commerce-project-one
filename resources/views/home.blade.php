@@ -3,7 +3,7 @@
 @section('content')
 
 @can('dashboard_data_show')
-This is from Ftp Conection
+
         <div class="row justify-content-center">
 
             <div class="col-lg-3 mt-4">
