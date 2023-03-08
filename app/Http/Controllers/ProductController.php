@@ -79,37 +79,37 @@ class ProductController extends Controller
             'addi_info'=>$request->addi_info,
             'created_at'=>Carbon::now(),
        ]);
-    //    $uploaded_file = $request->preview;
-    //    $extension = $uploaded_file->getClientOriginalExtension();
-    //    $file_name = $product_id.'.'.$extension;
+       $uploaded_file = $request->preview;
+       $extension = $uploaded_file->getClientOriginalExtension();
+       $file_name = $product_id.'.'.$extension;
 
-    //    Image::make($uploaded_file)->resize(600,600)->save(public_path('/uploads/products/preview/'.$file_name));
+       Image::make($uploaded_file)->resize(600,600)->save(public_path('/uploads/products/preview/'.$file_name));
 
-    //    Product::find($product_id)->update([
-    //     'preview'=>$file_name,
-    //    ]);
+       Product::find($product_id)->update([
+        'preview'=>$file_name,
+       ]);
 
-        // $loop = 1;
-        // $thumanails_images = $request->thumbnail;
-        // foreach($thumanails_images as $thumb){
-        //     $thumbnail_extension = $thumb->getClientOriginalExtension();
-        //     $thumb_file_name = $product_id.'-'.$loop.'.'.$thumbnail_extension;
-        //     Image::make($thumb)->resize(600,600)->save(public_path('/uploads/products/thumbnails/'.$thumb_file_name));
+        $loop = 1;
+        $thumanails_images = $request->thumbnail;
+        foreach($thumanails_images as $thumb){
+            $thumbnail_extension = $thumb->getClientOriginalExtension();
+            $thumb_file_name = $product_id.'-'.$loop.'.'.$thumbnail_extension;
+            Image::make($thumb)->resize(600,600)->save(public_path('/uploads/products/thumbnails/'.$thumb_file_name));
 
             Thumbnails::insert([
                 'product_id'=>$product_id,
-                'thumbnail'=>$request->preview,
+                'thumbnail'=>$request->thumb_file_name,
                 'created_at'=>carbon::now(),
             ]);
-        //     $loop++;
-        // }
-        // Inventory::insert([
-        //     'product_id'=>$product_id,
-        //     'color_id'=>1,
-        //     'size_id'=>2,
-        //     'quantity'=>1,
-        //     'created_at'=>Carbon::now(),
-        // ]);
+            $loop++;
+        }
+        Inventory::insert([
+            'product_id'=>$product_id,
+            'color_id'=>1,
+            'size_id'=>2,
+            'quantity'=>1,
+            'created_at'=>Carbon::now(),
+        ]);
 
        return back()->with('success', 'Product Added Successfully!');
     }

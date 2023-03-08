@@ -340,6 +340,7 @@ route::post('/upto/coupon/insert/', [CouponController::class, 'upto_coupon_add']
 route::post('/coupon/update/', [CouponController::class, 'coupon_update']);
 Route::get('/coupon/delete/{inventory_id}', [CouponController::class,'coupon_delete'])->name('coupon.delete');
 
+
 // SSLCOMMERZ Start
 Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout']);
 Route::get('/ssl/pay/', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
