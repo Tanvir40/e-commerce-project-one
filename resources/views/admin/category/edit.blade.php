@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('edit_catagory')
+{{-- @can('edit_catagory') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -48,5 +48,5 @@
         </div>
     </div>
 </div>
-@endcan
+{{-- @endcan --}}
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_trash_category')
+{{-- @can('show_trash_category') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -46,10 +46,10 @@
                             <td data-title="Action">
                             <a href="{{route('category.restore', $trashs->id)}}" class="btn btn-success">Restore
                             </a>
-                                @can('del_trash_catagory')
+                                {{-- @can('del_trash_catagory') --}}
                                 <button type="button" name="{{route('category.hard.delete', $trashs->id)}}" class="delete btn btn-danger ">Delete
                                 </button>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach
@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

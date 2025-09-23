@@ -130,15 +130,15 @@
 						</a>
                     </li>
 
-                 @can('role_manager')
+                 {{-- @can('role_manager') --}}
                     <li><a href="{{route('role.management')}}">
                             <i class="flaticon-381-networking"></i>
                             <span class="nav-text">Role Manager</span>
                         </a>
                     </li>
-                @endcan
+                {{--@endcan
 
-                @can('dashboard_link_show')
+                @can('dashboard_link_show') --}}
 
                      {{-- site customization --}}
 					<li><a href="{{route('site.customization')}}">
@@ -303,7 +303,7 @@
                     </ul>
                     </li>
 
-                    @endcan
+                    {{-- @endcan --}}
 
                 </ul>
 

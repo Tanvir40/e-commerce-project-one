@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('site_customization')
+{{-- @can('site_customization') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -144,7 +144,7 @@
 
 </div>
 
-@endcan
+{{-- @endcan --}}
 
 @endsection
 

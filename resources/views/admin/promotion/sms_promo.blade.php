@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('sent_sms')
+{{-- @can('sent_sms') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    @can('add_sms')
+    {{-- @can('add_sms') --}}
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
 
         <div class="col-lg-12">
             <div class="card">
@@ -88,7 +88,7 @@
         </div>
 
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

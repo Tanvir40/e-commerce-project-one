@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_inventory_color')
+{{-- @can('show_inventory_color') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -36,9 +36,9 @@
                                 <td data-title="SL">{{$key+1}}</td>
                                 <td data-title="Color name">{{$color->color_name}}</td>
                                 <td data-title="Color Code"><span style="width:10px; height:10px; background-color:{{$color->color_code}};">{{$color->color_code}}</span></td>
-                                @can('del_color')
+                                {{-- @can('del_color') --}}
                                 <td data-title="Action"><button type="button" name="{{route('color.delete', $color->id)}}" class="colordelete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button></td>
-                                @endcan
+                                {{-- @endcan --}}
                             </tr>
                             @endforeach
                         </tbody>
@@ -48,7 +48,7 @@
             </div>
         </div>
 
-        @can('add_color_size')
+        {{-- @can('add_color_size') --}}
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
@@ -76,7 +76,7 @@
                     </form>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
 
 
 
@@ -106,9 +106,9 @@
                     <tr>
                         <td>{{$key+1}}</td>
                         <td>{{$size->size}}</td>
-                        @can('del_size')
+                        {{-- @can('del_size') --}}
                         <td><button type="button" name="{{route('size.delete', $size->id)}}" class="sizedelete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button</td>
-                            @endcan
+                        {{-- @endcan --}}
                     </tr>
                     @endforeach
                 </tbody>
@@ -117,7 +117,7 @@
         </div>
     </div>
 
-    @can('add_color_size')
+    {{-- @can('add_color_size') --}}
     <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
@@ -138,11 +138,11 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 
 </div>
 
-@endcan
+{{-- @endcan --}}
 @endsection
 
 @section('footer_script')

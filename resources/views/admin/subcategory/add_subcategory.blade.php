@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_subcategory')
+{{-- @can('show_subcategory') --}}
 <div class="page-titles">
 <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -53,12 +53,12 @@
                             <td data-title="Created At">{{$subcategorys->created_at->diffForHumans()}}</td>
                             <td data-title="Updated At">{{$subcategorys->updated_at}}</td>
                             <td data-title="Action">
-                                @can('edit_subcatagory')
+                                {{-- @can('edit_subcatagory') --}}
                                 <a href="{{route('edit.subcategory', $subcategorys->id)}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                @endcan
-                                @can('del_subcatagory')
+                                {{-- @endcan
+                                @can('del_subcatagory') --}}
                                 <button type="button" name="{{route('subcategory.soft.delete', $subcategorys->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                     </tbody>
@@ -70,7 +70,7 @@
         </div>
     </div>
 
-    @can('add_subcategory')
+    {{-- @can('add_subcategory') --}}
     <div class="col-lg-3">
         <div class="card">
             <div class="card-header">
@@ -109,9 +109,9 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 </div>
-@endcan
+{{-- @endcan --}}
 @endsection
 
 @section('footer_script')

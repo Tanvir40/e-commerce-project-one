@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('edit_inventory')
+{{-- @can('edit_inventory') --}}
 
 
 {{-- breadcrumb start--}}
@@ -57,5 +57,5 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection

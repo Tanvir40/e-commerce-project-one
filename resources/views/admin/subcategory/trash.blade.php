@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_trash_subcategory')
+{{-- @can('show_trash_subcategory') --}}
 <div class="page-titles">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -40,10 +40,10 @@
                             <td data-title="Action">
                             <a href="{{route('subcategory.restore', $trashs->id)}}" class="btn btn-success">Restore
                             </a>
-                            @can('del_trash_subcatagory')
+                            {{-- @can('del_trash_subcatagory') --}}
                                 <button type="button" name="{{route('subcategory.hard.delete', $trashs->id)}}" class="delete btn btn-danger ">Delete
                                 </button>
-                                @endcan
+                            {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach
@@ -56,7 +56,7 @@
             </div>
         </div>
     </div>
-@endcan
+{{-- @endcan --}}
 @endsection
 
 @section('footer_script')

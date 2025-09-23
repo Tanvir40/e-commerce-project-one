@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_coupon')
+{{-- @can('show_coupon') --}}
             {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -48,12 +48,12 @@
                         <td data-title="Type">{{$coupon->type}}</td>
                         <td data-title="Validity">{{$coupon->validity}}</td>
                         <td data-title="Action">
-                            @can('edit_coupon')
+                            {{-- @can('edit_coupon') --}}
                             <a href="{{route('coupon.edit', $coupon->id)}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                            @endcan
-                            @can('del_coupon')
+                            {{-- @endcan
+                            @can('del_coupon') --}}
                             <button type="button" name="{{route('coupon.delete', $coupon->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button></td>
-                            @endcan
+                            {{-- @endcan --}}
                     </tr>
                     @endforeach
                 </tbody>
@@ -63,7 +63,7 @@
           </div>
         </div>
 
-        @can('add_coupon')
+        {{-- @can('add_coupon') --}}
 
         <div class="col-lg-4">
             <div class="card">
@@ -245,11 +245,11 @@
             </div>
           </div>
 
-          @endcan
+          {{-- @endcan --}}
 
 
     </div>
-@endcan
+{{-- @endcan --}}
 @endsection
 
 @section('footer_script')

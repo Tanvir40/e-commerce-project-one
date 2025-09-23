@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('sent_email')
+{{-- @can('sent_email') --}}
 
 
 {{-- breadcrumb start--}}
@@ -55,7 +55,7 @@
         </div>
 
 
-        @can('add_email')
+        {{-- @can('add_email') --}}
 
         <div class="col-lg-4">
             <div class="card">
@@ -81,7 +81,7 @@
             </div>
         </div>
 
-        @endcan
+        {{-- @endcan --}}
 
         <div class="col-lg-12">
             <div class="card">
@@ -99,7 +99,7 @@
         </div>
 
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

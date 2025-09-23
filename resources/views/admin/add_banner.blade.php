@@ -1,7 +1,7 @@
 @extends('layouts.dashboard')
 @section('content')
 
-@can('add_banner')
+{{-- @can('add_banner') --}}
 
 {{-- breadcrumb start--}}
 <div class="page-titles">
@@ -175,9 +175,9 @@
 
     </div>
 
-@endcan
+{{-- @endcan
 
-@endsection
+@endsection --}}
 
 @section('footer_script')
  {{-- delete banner success --}}

@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('best_selling')
+{{-- @can('best_selling') --}}
 
 
 {{-- breadcrumb start--}}
@@ -11,5 +11,5 @@
     </ol>
     </div>
     {{-- breadcrumb end --}}
-    @endcan
+    {{-- @endcan --}}
 @endsection

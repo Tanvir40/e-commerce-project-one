@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('user_list')
+{{-- @can('user_list') --}}
 
 
 {{-- breadcrumb start--}}
@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

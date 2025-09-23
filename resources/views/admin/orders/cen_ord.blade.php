@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_cencel_orders')
+{{-- @can('show_cencel_orders') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -9,7 +9,7 @@
     </ol>
     </div>
     {{-- breadcrumb end --}}
-    @endcan
+    {{-- @endcan --}}
 
     <div class="row">
         <div class="col-lg-12">

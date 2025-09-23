@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('edit_coupon')
+{{-- @can('edit_coupon') --}}
 <div class="page-titles">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -165,5 +165,5 @@
          @endif
 
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection

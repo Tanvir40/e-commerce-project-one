@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_product_list')
+{{-- @can('show_product_list') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -73,17 +73,17 @@
                             </td>
 
                             <td class="table-action" data-title="Action">
-                                @can('show_inventory')
+                                {{-- @can('show_inventory') --}}
                                 <a href="{{route('product.inventory' , $product->id)}}" class="action-icon"> <i class="mdi mdi-eye"></i></a>
-                                @endcan
+                                {{-- @endcan
 
-                                @can('edit_product')
+                                @can('edit_product') --}}
                                 <a href="{{route('edit.product' , $product->id)}}" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
-                                @endcan
+                                {{-- @endcan
 
-                                @can('del_product')
+                                @can('del_product') --}}
                                 <button type="button" name="{{route('product.delete' , $product->id)}}" class="action-icon delete"> <i class="mdi mdi-delete"></i></button>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach
@@ -94,7 +94,7 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

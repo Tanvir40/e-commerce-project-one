@@ -2,7 +2,7 @@
 
 @section('content')
 
-@can('dashboard_data_show')
+{{-- @can('dashboard_data_show') --}}
 
         <div class="row justify-content-center">
 
@@ -626,16 +626,8 @@
                 {{-- reports form end --}}
 
         </div>
-@else
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="alert alert-success">
-                        <h3 class="text-center">Welcome To Admin Panel</h3>
-                        <p class="text-center">Please Wait For Admin Permission</p>
-                    </div>
-                </div>
-            </div>
-@endcan
+
+{{-- @endcan --}}
 @endsection
 @section('footer_script')
 <script>

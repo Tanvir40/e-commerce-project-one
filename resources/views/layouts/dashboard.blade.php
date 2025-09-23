@@ -65,7 +65,7 @@
                         </a>
                     </li>
 
-                    @can('role_manager')
+                    {{-- @can('role_manager') --}}
 
                     <li class="side-nav-item">
                         <a href="{{route('role.management')}}" class="side-nav-link">
@@ -73,9 +73,9 @@
                             <span> Role Manager </span>
                         </a>
                     </li>
-                    @endcan
+                    {{-- @endcan
 
-                    @can('dashboard_link_show')
+                    @can('dashboard_link_show') --}}
 
                     <li class="side-nav-item">
                         <a data-bs-toggle="collapse" href="#sidebarProjects" aria-expanded="false" aria-controls="sidebarProjects" class="side-nav-link">
@@ -250,7 +250,7 @@
                         </div>
                     </li>
 
-                    @endcan
+                    {{-- @endcan --}}
                 </ul>
 
 

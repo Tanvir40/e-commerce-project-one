@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('edit_childcatagory')
+{{-- @can('edit_childcatagory') --}}
 
 
 <div class="page-titles">
@@ -70,5 +70,5 @@
                 </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection

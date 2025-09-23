@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('edit_product')
+{{-- @can('edit_product') --}}
 
 
 {{-- breadcrumb start--}}
@@ -167,7 +167,7 @@
             </div>
         </div>
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

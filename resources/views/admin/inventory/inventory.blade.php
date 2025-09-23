@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_inventory')
+{{-- @can('show_inventory') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -59,12 +59,12 @@
                         </td>
                           <td data-title="Quantity">{{$inventory->quantity}}</td>
                           <td data-title="Action">
-                              @can('edit_inventory')
+                              {{-- @can('edit_inventory') --}}
                               <a href="{{route('inventory.edit', $inventory->id)}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                              @endcan
-                              @can('del_inventory')
+                              {{-- @endcan
+                              @can('del_inventory') --}}
                             <button type="button" name="{{route('inventory.delete', $inventory->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button>
-                            @endcan
+                            {{-- @endcan --}}
                           </td>
                       </tr>
                         @endforeach
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        @can('add_inventory')
+        {{-- @can('add_inventory') --}}
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
@@ -127,7 +127,7 @@
                 </div>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
     </div>
 
 
@@ -156,9 +156,9 @@
                           <td data-title="SL">{{$key+1}}</td>
                           <td data-title="Quantity">{{$tag->tag_name}}</td>
                           <td data-title="Action">
-                              @can('del_inventory')
+                            {{-- @can('del_inventory') --}}
                             <button type="button" name="{{route('tags.delete', $tag->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button>
-                            @endcan
+                            {{-- @endcan --}}
                           </td>
                       </tr>
                         @endforeach
@@ -169,7 +169,7 @@
             </div>
         </div>
 
-        @can('add_inventory')
+        {{-- @can('add_inventory') --}}
         <div class="col-lg-4">
             <div class="card">
                 <div class="card-header">
@@ -198,10 +198,10 @@
                 </div>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
     </div>
 
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

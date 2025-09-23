@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_category')
+{{-- @can('show_category') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -16,7 +16,7 @@
             <div class="card">
               <div class="card-header">
                 <h2>Category List</h2>
-                
+
                 <span class="float-end nav-item"><a class="nav-link" href="{{route('category.trash')}}">View Trash</a></span>
               </div>
             <div class="card-body">
@@ -54,12 +54,12 @@
                             <td data-title="Created At">{{$category->created_at->diffForhumans()}}</td>
                             <td data-title="updated At">{{$category->updated_at}}</td>
                             <td data-title="Action">
-                                @can('edit_catagory')
+                                {{-- @can('edit_catagory') --}}
                                 <a href="{{route('category.edit', $category->id)}}" class="btn btn-primary shadow btn-xs sharp mr-1"><i class="fa fa-pencil"></i></a>
-                                @endcan
-                                @can('del_catagory')
+                                {{-- @endcan
+                                @can('del_catagory') --}}
                                 <button type="button" name="{{route('category.soft.delete', $category->id)}}" class="delete btn btn-danger shadow btn-xs sharp mr-1"><i class="fa fa-trash"></i></button>
-                                @endcan
+                                {{-- @endcan --}}
                             </td>
                         </tr>
                         @endforeach
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        @can('add_category')
+        {{-- @can('add_category') --}}
         <div class="col-lg-3">
             <div class="card">
               <div class="card-header">
@@ -105,10 +105,10 @@
             </div>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
 
     </div>
-    @endcan
+    {{-- @endcan --}}
 @endsection
 
 @section('footer_script')

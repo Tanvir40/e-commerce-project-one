@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('show_reviews')
+{{-- @can('show_reviews') --}}
 {{-- breadcrumb start--}}
 <div class="page-titles">
     <ol class="breadcrumb">
@@ -54,5 +54,5 @@
             </div>
             </div>
         </div>
-        @endcan
+        {{-- @endcan --}}
 @endsection
