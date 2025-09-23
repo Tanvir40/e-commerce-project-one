@@ -24,7 +24,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('/backend/css/vendor/chartist.min.css')}}">
 
-    
+
 </head>
 
 <body class="loading" data-layout-config='{"leftSideBarTheme":"dark","layoutBoxed":false, "leftSidebarCondensed":false, "leftSidebarScrollable":false,"darkMode":false, "showRightSidebarOnStart": true}'>
@@ -283,19 +283,19 @@
                                     @else
                                     <img class="rounded-circle" src="{{asset('/uploads/users')}}/{{Auth::user()->profile_photo}}" width="20" alt=""/>
                                    @endif
-                                       @php
+                                       {{--@php
                                            $name = auth()->user()->roles->pluck('name')[0];
-                                       @endphp
+                                       @endphp--}}
                                 </span>
                                 <span>
                                     <span class="account-user-name">{{Auth::user()->name}}</span>
-                                    <span class="account-position">{{$name}}</span>
+                                    {{--<span class="account-position">{{$name}}</span>--}}
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown">
                                 <!-- item-->
                                 <div class=" dropdown-header noti-title">
-                                    <h6 class="text-overflow m-0">Welcome {{$name}}</h6>
+                                    {{--<h6 class="text-overflow m-0">Welcome {{$name}}</h6>--}}
                                 </div>
 
                                 <!-- item-->
@@ -379,7 +379,7 @@
       <script src="https://cdnjs.com/libraries/Chart.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
-      
+
       @yield('footer_script')
 </body>
 </html>

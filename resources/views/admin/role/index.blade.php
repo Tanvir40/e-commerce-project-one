@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-@can('role_manager')
+
     <div class="page-titles">
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
@@ -181,7 +181,6 @@
         </div>
 
     </div>
-    @endcan
     @endsection
     @section('footer_script')
     <script>
