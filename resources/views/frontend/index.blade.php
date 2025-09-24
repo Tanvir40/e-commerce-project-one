@@ -850,7 +850,7 @@
 
             $.ajax({
                 type:'POST',
-                url:'/getSizes',
+                url:'http://localhost/e-commerce-project-one/public/getSizes',
                 data:{'color_id':color_id, 'product_id':product_id},
                 success:function(data){
                     $('#size_ids'+product_id).html(data);
@@ -874,7 +874,7 @@
 
             $.ajax({
                 type:'POST',
-                url:'/stock',
+                url:'http://localhost/e-commerce-project-one/public/stock',
                 data:{'color_id':color_id, 'product_id':product_id, 'size_id':size_id},
                 success:function(data){
                     $('.stock'+product_id).html(data);
@@ -899,7 +899,7 @@
 
             $.ajax({
                 type:'POST',
-                url:'/stocks',
+                url:'http://localhost/e-commerce-project-one/public/stocks',
                 data:{'color_id':color_id, 'product_id':product_id, 'size_id':size_id},
                 success:function(data){
                     $('.stocks'+product_id).html(data);

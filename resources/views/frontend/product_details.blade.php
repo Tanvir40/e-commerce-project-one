@@ -399,7 +399,7 @@
 
                 $.ajax({
                     type:'POST',
-                    url:'/getSize',
+                    url:'http://localhost/e-commerce-project-one/public/getSize',
                     data:{'color_id':color_id , 'product_id':product_id},
                     success:function(data){
                         $('#size_id').html(data);
@@ -429,7 +429,7 @@
 
             $.ajax({
                 type:'POST',
-                url:'/stock',
+                url:'http://localhost/e-commerce-project-one/public/stock',
                 data:{'color_id':color_id, 'product_id':product_id, 'size_id':size_id},
                 success:function(data){
                     $('.stock').html(data);

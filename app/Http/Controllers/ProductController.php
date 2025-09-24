@@ -127,14 +127,14 @@ class ProductController extends Controller
             $product_image = Product::find($product_id);
             $product_image->preview;
             $delete_from = public_path('/uploads/products/preview/'.$product_image->preview);
-            unlink($delete_from);
+            // unlink($delete_from);
 
         // product thumbnail image delete
 
              $prev_img = Thumbnails::where('product_id' , $product_id)->get();
              foreach($prev_img as $thumb){
                  $delete_from = public_path('/uploads/products/thumbnails/'.$thumb->thumbnail);
-                 unlink($delete_from);
+                //  unlink($delete_from);
              }
              Thumbnails::where('product_id' , $product_id)->delete();
         //product delete
@@ -201,7 +201,7 @@ class ProductController extends Controller
             if($preview_images != ''){
                  $preview_images = Product::find($request->id);
                  $delete_from = public_path('/uploads/products/preview/'.$preview_images->preview);
-                unlink($delete_from);
+                // unlink($delete_from);
 
 
              $uploaded_file = $request->preview;
@@ -221,7 +221,7 @@ class ProductController extends Controller
 
                 foreach($prev_img as $thumb){
                     $delete_from = public_path('/uploads/products/thumbnails/'.$thumb->thumbnail);
-                    unlink($delete_from);
+                    // unlink($delete_from);
                 }
                 Thumbnails::where('product_id' , $request->id)->delete();
                 $loop = 1;

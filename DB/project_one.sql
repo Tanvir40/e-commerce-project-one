@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 23, 2025 at 09:57 PM
+-- Generation Time: Sep 24, 2025 at 09:32 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -201,6 +201,13 @@ CREATE TABLE `customer_email_verifies` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `customer_email_verifies`
+--
+
+INSERT INTO `customer_email_verifies` (`id`, `customer_id`, `token`, `created_at`, `updated_at`) VALUES
+(1, 1, '68d39e36723bd', '2025-09-24 07:31:02', '2025-09-24 07:31:02');
+
 -- --------------------------------------------------------
 
 --
@@ -216,6 +223,13 @@ CREATE TABLE `customer_logins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `customer_logins`
+--
+
+INSERT INTO `customer_logins` (`id`, `name`, `email`, `password`, `email_verified_at`, `created_at`, `updated_at`) VALUES
+(1, 'zivyko', 'tizus@mailinator.com', '$2y$10$VbfjQNJCK.Mcgl4EhEebHuDcYnzQmcU489D9Bj1eT4YWH7qr02mP2', NULL, '2025-09-24 07:31:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -297,6 +311,14 @@ CREATE TABLE `image_carosels` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `image_carosels`
+--
+
+INSERT INTO `image_carosels` (`id`, `small_text`, `thin_large_text`, `thik_large_text`, `small_title`, `price`, `discount_price`, `product_url`, `carousel_image`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Small Orange Text', 'Small Orange Text', 'Thik Large Text', 'Small Orange Text', 60, 50, 'https://www.facebook.com/', 'SmallOrangeText.jpg', 1, '2025-09-24 07:14:59', '2025-09-24 07:15:12'),
+(2, '292', '667', '102', '292', 124, 889, 'https://www.totiricen.info', '292.jpg', 2, '2025-09-24 07:20:16', '2025-09-24 07:20:17');
+
 -- --------------------------------------------------------
 
 --
@@ -313,6 +335,13 @@ CREATE TABLE `inventories` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `inventories`
+--
+
+INSERT INTO `inventories` (`id`, `product_id`, `color_id`, `size_id`, `quantity`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, 500, '2025-09-24 07:24:41', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -322,9 +351,18 @@ CREATE TABLE `inventories` (
 CREATE TABLE `meta_tags` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `tag_name` varchar(255) NOT NULL,
+  `product_id` int(255) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `meta_tags`
+--
+
+INSERT INTO `meta_tags` (`id`, `tag_name`, `product_id`, `created_at`, `updated_at`) VALUES
+(1, 'sdgdgdg', 1, '2025-09-24 07:23:41', NULL),
+(2, 'hello', 1, '2025-09-24 07:24:48', NULL);
 
 -- --------------------------------------------------------
 
@@ -540,7 +578,7 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `category_id`, `subcategory_id`, `childcategory_id`, `product_name`, `product_price`, `discount`, `after_discount`, `brand_name`, `short_desp`, `long_desp`, `addi_info`, `preview`, `created_at`, `updated_at`) VALUES
-(1, 1, NULL, NULL, 'test', 55, 5, 55, 'No Brand', 'short_desp', 'long_desp', 'addi_info', NULL, '2025-09-23 16:24:08', NULL);
+(1, 1, NULL, NULL, 'Head Phone', 55, 5, 52, 'No Brand', 'short_desp', '<p>sxgbxdb</p>', '<p>sdbsdbsdxb</p>', '1.jpg', '2025-09-23 16:24:08', '2025-09-24 07:22:32');
 
 -- --------------------------------------------------------
 
@@ -643,6 +681,13 @@ CREATE TABLE `thumbnails` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `thumbnails`
+--
+
+INSERT INTO `thumbnails` (`id`, `product_id`, `thumbnail`, `created_at`, `updated_at`) VALUES
+(1, 1, '1-1.jpg', '2025-09-24 07:22:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -990,13 +1035,13 @@ ALTER TABLE `customer_emails`
 -- AUTO_INCREMENT for table `customer_email_verifies`
 --
 ALTER TABLE `customer_email_verifies`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer_logins`
 --
 ALTER TABLE `customer_logins`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `customer_numbers`
@@ -1026,19 +1071,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `image_carosels`
 --
 ALTER TABLE `image_carosels`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `inventories`
 --
 ALTER TABLE `inventories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `meta_tags`
 --
 ALTER TABLE `meta_tags`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1104,7 +1149,7 @@ ALTER TABLE `subcategories`
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `upto_discount_coupons`
